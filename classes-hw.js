@@ -62,7 +62,21 @@ const problems = [
     // Create a class called Penguin that extends Bird and overrides the fly() method to log "Penguins can't fly"
     // Then create one Bird and one Penguin, and call their fly() methods.
 
-    // Write your class and code here
+    class Bird{
+      fly(){
+        log("flying")
+      }
+    }
+    class Penguin extends Bird {
+      fly(){
+        log("Penguins can't fly")
+      }
+    }
+
+    lbird = new Bird().fly()
+    lpenguin = new Penguin().fly()
+
+
   },
   function problem4() {
     // Problem 4:
@@ -72,7 +86,26 @@ const problems = [
     // - Square's describe() method logs "I'm a square"
     // Then create instances of Circle and Square and call their describe() methods.
 
-    // Write your class and code here
+    class Shape{
+      describe(){
+        log("I'm a shape")
+      }
+    }
+    class Circle{
+      describe(){
+        log("I'm a circle")
+      }
+    }
+    class Square{
+      describe(){
+        log("I'm a square")
+      }
+    }
+    const Circles = new Circle().describe()
+    const Squares = new Square().describe()
+
+    log(`${Circles.describe()}`)
+    log(`${Squares.describe()}`)
   },
   function problem5() {
     // Problem 5:
@@ -80,9 +113,21 @@ const problems = [
     // Create a subclass called Manager that has an additional method hireEmployee() that logs "Employee hired"
     // Then create an instance of Manager, and call both methods.
 
-    // Write your class and code here
+    class Employee {
+      work() {
+        log("Working...")
+      }
+    }
+    class Manager extends Employee {
+      hireEmployee() {
+        log("Employee hired")
+      }
+    }
+
+    const boss = new Manager().work()
+    const bossS = new Manager().hireEmployee()
   }
-];
+]
 
 problems.forEach((fn, index) => {
   const btn = document.createElement('button');
